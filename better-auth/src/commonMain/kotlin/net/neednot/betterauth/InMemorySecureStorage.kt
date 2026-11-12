@@ -1,6 +1,6 @@
 package net.neednot.betterauth
 
-/** Forgets the session when the process ends. For tests and hosts without a keystore. */
+/** Forgets the session when the process ends. For tests. */
 public class InMemorySecureStorage : SecureStorage {
     private var value: String? = null
 

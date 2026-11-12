@@ -4,7 +4,7 @@ A small Kotlin client for a [Better Auth](https://better-auth.com) server, for a
 SDK. It signs a user in, keeps the session in encrypted storage, exposes the auth state as a `StateFlow`, and hands
 out short-lived JWTs for your other backends.
 
-It is a Kotlin Multiplatform library with Android and JVM targets. iOS is not published yet.
+It is Android-only for now. The code is laid out as a Kotlin Multiplatform module so other targets can be added later.
 
 ## Install
 
@@ -20,7 +20,7 @@ dependencyResolutionManagement {
 
 // build.gradle.kts
 dependencies {
-    implementation("com.github.NeedNot.better-auth-android:better-auth:0.1.0")
+    implementation("com.github.NeedNot.better-auth-android:better-auth:0.2.0")
 }
 ```
 
@@ -77,7 +77,7 @@ so the `bearer` plugin is not required.
 ## Storage
 
 On Android, `BetterAuthClient(context, config)` stores the session in a Preferences DataStore, encrypted with an
-AES-256-GCM key held in the Android Keystore. On other targets, or to use your own storage, implement
+AES-256-GCM key held in the Android Keystore. To use your own storage, implement
 `SecureStorage` and call `BetterAuthClient(config, storage)`. `InMemorySecureStorage` is there for tests.
 
 ## Adding a sign-in method

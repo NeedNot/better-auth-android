@@ -31,7 +31,7 @@ jobs:
         run: ./gradlew ktlintCheck
 
       - name: Tests
-        run: ./gradlew jvmTest
+        run: ./gradlew testAndroidHostTest
 
       - name: Android library builds and publishes
         run: ./gradlew publishToMavenLocal

@@ -23,9 +23,8 @@ kotlin {
             libs.versions.android.minSdk
                 .get()
                 .toInt()
+        withHostTest {}
     }
-
-    jvm()
 
     sourceSets {
         commonMain.dependencies {
@@ -37,9 +36,6 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
             implementation(libs.androidx.datastore.preferences)
-        }
-        jvmMain.dependencies {
-            implementation(libs.ktor.client.okhttp)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
